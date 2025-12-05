@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PUYI x ZEISS G7 Factory Visit Itinerary</title>
+    <meta name="description" content="Official Itinerary for PUYI ZEISS G7 Factory Visit, Dec 15-16, 2025">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Oswald:wght@400;500&display=swap');
+        
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center; 
+            min-height: 100vh;
+            margin: 0;
+            padding: 80px 20px 120px 20px; /* Top padding for navbar */
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        /* Sticky Navigation Bar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 12px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .nav-content {
+            width: 100%;
+            max-width: 600px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            color: #001f3f;
+            font-size: 1.1rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-link {
+            color: #64748b;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.3s;
+            padding: 4px 0;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: #001f3f;
+            border-bottom: 2px solid #001f3f;
+        }
+
+        /* Card Styling */
+        .poster-container {
+            width: 100%;
+            max-width: 600px;
+            background: white;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 16px;
+            overflow: hidden; 
+            display: flex;
+            flex-direction: column;
+            word-wrap: break-word;
+        }
+
+        .brand-gradient {
+            background: linear-gradient(135deg, #001f3f 0%, #003366 100%);
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 24px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: #e5e7eb;
+            z-index: 0;
+        }
+
+        .timeline-item {
+            position: relative;
+            z-index: 1;
+        }
+
+        .time-font {
+            font-family: 'Oswald', sans-serif;
+        }
+
+        /* Updated Action Bar for Web */
+        .action-bar {
+            width: 100%;
+            max-width: 600px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .action-title {
+            font-size: 0.9rem;
+            color: #64748b;
+            text-align: center;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .btn-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .action-btn {
+            background-color: #f1f5f9;
+            color: #001f3f;
+            padding: 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+            border: 1px solid #e2e8f0;
+            font-size: 0.9rem;
+            width: 100%;
+        }
+        
+        .action-btn:hover {
+            background-color: #e2e8f0;
+            transform: translateY(-1px);
+        }
+        
+        .action-btn.primary {
+            background-color: #001f3f;
+            color: white;
+            grid-column: span 2;
+            border: none;
+        }
+        
+        .action-btn.primary:hover {
+            background-color: #003366;
+            box-shadow: 0 4px 12px rgba(0, 31, 63, 0.2);
+        }
+
+        .section-label {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(255,255,255,0.2);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 10px;
+            color: rgba(255,255,255,0.8);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .participant-list p {
+            word-break: break-word; 
+            overflow-wrap: break-word;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="nav-logo">PUYI x ZEISS</div>
+            <div class="nav-links">
+                <a href="#card-day1" class="nav-link">Day 1</a>
+                <a href="#card-day2" class="nav-link">Day 2</a>
+                <a href="#downloads" class="nav-link"><i class="fas fa-download"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- CARD 1: DAY 1 -->
+    <div class="poster-container" id="card-day1">
+        <!-- Header -->
+        <div class="brand-gradient text-white p-8 relative overflow-hidden">
+            <div class="section-label">Day 1 Agenda</div>
+            <div class="absolute top-0 right-0 opacity-10 transform translate-x-10 -translate-y-10">
+                <i class="fas fa-industry text-9xl"></i>
+            </div>
+            
+            <div class="relative z-10">
+                <div class="flex justify-between items-start mb-4">
+                    <div class="text-xs tracking-widest border border-white/30 px-2 py-1 rounded uppercase">Business Trip</div>
+                    <div class="text-right">
+                        <div class="text-2xl font-bold time-font">2025</div>
+                        <div class="text-sm opacity-80">DEC 15</div>
+                    </div>
+                </div>
+                
+                <h1 class="text-3xl font-bold leading-tight mb-2">PUYI ZEISS<br>G7 Factory Visit</h1>
+                <p class="text-blue-200 text-sm"><i class="fas fa-map-marker-alt mr-2"></i>Guangzhou, China</p>
+            </div>
+        </div>
+
+        <!-- Participants -->
+        <div class="bg-slate-50 border-b border-slate-100 p-6 participant-list">
+            <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Participants</h3>
+            <div class="grid grid-cols-1 gap-4 text-sm">
+                <div class="flex items-start">
+                    <span class="bg-black text-white text-xs font-bold px-2 py-0.5 rounded mr-2 mt-0.5 shrink-0">PUYI (8)</span>
+                    <p class="text-slate-600 leading-snug">Jeffery, Julian, Bonley, Macy, Julio, Bryan, Ken, Yuu</p>
+                </div>
+                <div class="flex items-start">
+                    <span class="bg-blue-800 text-white text-xs font-bold px-2 py-0.5 rounded mr-2 mt-0.5 shrink-0">ZEISS CN (7)</span>
+                    <p class="text-slate-600 leading-snug">Winston, Leo, Samuel, Jeffrey, Ada, Aaron, Nancy</p>
+                </div>
+                <div class="flex items-start">
+                    <span class="bg-blue-600 text-white text-xs font-bold px-2 py-0.5 rounded mr-2 mt-0.5 shrink-0">ZEISS HK (2)</span>
+                    <p class="text-slate-600 leading-snug">Jerome, Janet</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Day 1 Content -->
+        <div class="bg-white flex-grow">
+            <div class="relative p-6 pb-8">
+                <div class="flex items-center mb-6">
+                    <div class="bg-blue-900 text-white font-bold rounded-lg px-3 py-1 text-center mr-4 shadow-lg shrink-0 w-16">
+                        <div class="text-xs opacity-75">DEC</div>
+                        <div class="text-xl time-font">15</div>
+                    </div>
+                    <div>
+                        <h2 class="text-xl font-bold text-slate-800">Day 1: Arrival</h2>
+                        <p class="text-xs text-slate-500">蔡司辦公室參訪與晚宴</p>
+                    </div>
+                </div>
+
+                <div class="relative pl-8 space-y-8">
+                    <div class="timeline-line"></div>
+                    <!-- Timeline Items -->
+                    <div class="timeline-item">
+                        <div class="absolute -left-8 top-1 bg-white border-2 border-blue-900 rounded-full w-4 h-4 z-10"></div>
+                        <div class="flex flex-col sm:flex-row sm:items-baseline">
+                            <span class="text-blue-900 font-bold time-font w-16 shrink-0">13:30</span>
+                            <!-- Added Yellow Background -->
+                            <div class="bg-yellow-50 p-3 rounded-lg border border-yellow-200 w-full">
+                                <h4 class="font-bold text-slate-800">自行到達蔡司辦公室</h4>
+                                <p class="text-sm text-slate-700 mt-1 break-words"><i class="far fa-building mr-1"></i>廣州市天河區珠江東路高德置地冬廣場G座38樓</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="absolute -left-8 top-1 bg-blue-100 border-2 border-blue-300 rounded-full w-4 h-4 z-10"></div>
+                        <div class="flex flex-col sm:flex-row sm:items-baseline">
+                            <span class="text-slate-500 font-bold time-font w-16 shrink-0">13:35</span>
+                            <div>
+                                <h4 class="font-medium text-slate-700">蔡司辦公室文化展覽牆參觀</h4>
+                                <span class="text-xs bg-slate-100 text-slate-500 px-1.5 py-0.5 rounded">20 mins</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="absolute -left-8 top-1 bg-blue-100 border-2 border-blue-300 rounded-full w-4 h-4 z-10"></div>
+                        <div class="flex flex-col sm:flex-row sm:items-baseline">
+                            <span class="text-slate-500 font-bold time-font w-16 shrink-0">14:00</span>
+                            <div>
+                                <h4 class="font-bold text-blue-900">JBP Meeting</h4>
+                                <span class="text-xs bg-blue-50 text-blue-600 px-1.5 py-0.5 rounded">4 hours</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="absolute -left-8 top-1 bg-yellow-100 border-2 border-yellow-400 rounded-full w-4 h-4 z-10"></div>
+                        <div class="flex flex-col sm:flex-row sm:items-baseline">
+                            <span class="text-slate-500 font-bold time-font w-16 shrink-0">18:00</span>
+                            <!-- Removed Background -->
+                            <div class="w-full">
+                                <h4 class="font-bold text-slate-800"><i class="fas fa-utensils text-yellow-600 mr-2"></i>晚宴 Dinner</h4>
+                                <p class="text-sm text-slate-600 mt-1">餐廳 @ 廣州柏悅酒店</p>
+                                <p class="text-xs text-slate-400 mt-0.5 break-words">廣州市天河區珠江新城華夏路16號富力盈凱廣場 53-70層</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item pb-4">
+                        <div class="absolute -left-8 top-1 bg-indigo-100 border-2 border-indigo-400 rounded-full w-4 h-4 z-10"></div>
+                        <div class="flex flex-col sm:flex-row sm:items-baseline">
+                            <span class="text-slate-500 font-bold time-font w-16 shrink-0">20:30</span>
+                            <div>
+                                <h4 class="font-bold text-slate-800"><i class="fas fa-bed text-indigo-500 mr-2"></i>入住酒店 Check-in</h4>
+                                <p class="text-sm text-slate-600 break-words">廣州柏悅酒店 (Park Hyatt Guangzhou)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-slate-100 p-4 text-center text-xs text-slate-400 border-t border-slate-200 mt-auto">
+                <p>Day 1 / 2 &bull; PUYI x ZEISS Collaboration Event</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- CARD 2: DAY 2 -->
+    <div class="poster-container" id="card-day2">
+        <!-- Header -->
+        <div class="brand-gradient text-white p-8 relative overflow-hidden">
+             <div class="section-label">Day 2 Agenda</div>
+            <div class="absolute top-0 right-0 opacity-10 transform translate-x-10 -translate-y-10">
+                <i class="fas fa-cogs text-9xl"></i>
+            </div>
+            
+            <div class="relative z-10">
+                <div class="flex justify-between items-start mb-4">
+                    <div class="text-xs tracking-widest border border-white/30 px-2 py-1 rounded uppercase">Business Trip</div>
+                    <div class="text-right">
+                        <div class="text-2xl font-bold time-font">2025</div>
+                        <div class="text-sm opacity-80">DEC 16</div>
+                    </div>
+                </div>
+                
+                <h1 class="text-3xl font-bold leading-tight mb-2">PUYI ZEISS<br>G7 Factory Visit</h1>
+                <p class="text-blue-200 text-sm"><i class="fas fa-map-marker-alt mr-2"></i>Guangzhou, China</p>
+            </div>
+        </div>
+
+        <!-- Day 2 Content -->
+        <div class="bg-white flex-grow">
+            <div class="relative p-6 pt-8 pb-8">
+                <div class="flex items-center mb-6">
+                    <div class="bg-slate-800 text-white font-bold rounded-lg px-3 py-1 text-center mr-4 shadow-lg shrink-0 w-16">
+                        <div class="text-xs opacity-75">DEC</div>
+                        <div class="text-xl time-font">16</div>
+                    </div>
+                    <div>
+                        <h2 class="text-xl font-bold text-slate-800">Day 2: Factory Tour</h2>
+                        <p class="text-xs text-slate-500">工廠參訪、工作坊與創新交流</p>
+                    </div>
+                </div>
+
+                <div class="relative pl-8 space-y-8">
+                    <div class="timeline-line"></div>
+                    <!-- Timeline Items -->
+                    <div class="timeline-item">
+                        <div class="absolute -left-8 top-1 bg-slate-100 border-2 border-slate-400 rounded-full w-4 h-4 z-10"></div>
+                        <div class="flex flex-col sm:flex-row sm:items-baseline">
+                            <span class="text-slate-500 font-bold time-font w-16 shrink-0">08:20</span>
+                            <div>
+                                <h4 class="font-medium text-slate-700"><i class="fas fa-bus text-slate-400 mr-2"></i>乘車前往廣州工廠</h4>
+                                <p class="text-xs text-red-500 mt-1">*請帶同行李退房離開</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Block: Tour Series -->
+                    <div class="timeline-item">
+                        <div class="absolute -left-8 top-0 bottom-0 bg-blue-50 w-1"></div> 
+                        <div class="absolute -left-8 top-1 bg-blue-500 border-2 border-white shadow rounded-full w-4 h-4 z-10"></div>
+                        
+                        <div class="space-y-4">
+                            <div class="flex flex-col sm:flex-row sm:items-baseline">
+                                <span class="text-blue-600 font-bold time-font w-16 shrink-0">09:30</span>
+                                <div>
+                                    <h4 class="font-bold text-slate-800">沉浸式體驗中心</h4>
+                                    <span class="text-xs text-slate-400">15 mins</span>
+                                </div>
+                            </div>
+                            <div class="flex flex-col sm:flex-row sm:items-baseline">
+                                <span class="text-blue-600 font-bold time-font w-16 shrink-0">09:45</span>
+                                <div>
+                                    <h4 class="font-bold text-slate-800">大規模製造與 VR/AR 車間</h4>
+                                    <p class="text-xs text-slate-500">生產車間參觀 (75 mins)</p>
+                                </div>
+                            </div>
+                            <div class="flex flex-col sm:flex-row sm:items-baseline">
+                                <span class="text-blue-600 font-bold time-font w-16 shrink-0">11:00</span>
+                                <div>
+                                    <h4 class="font-bold text-slate-800">高端訂制鏡片加工中心 (G7)</h4>
+                                </div>
+                            </div>
+                            <div class="flex flex-col sm:flex-row sm:items-baseline">
+                                <span class="text-blue-600 font-bold time-font w-16 shrink-0">11:45</span>
+                                <div>
+                                    <h4 class="font-bold text-slate-800">蔡司 T&I 實驗室參觀與交流</h4>
+                                    <p class="text-xs text-slate-500 mt-1">蔡司研發創新專家介紹前沿研究</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="absolute -left-8 top-1 bg-yellow-100 border-2 border-yellow-400 rounded-full w-4 h-4 z-10"></div>
+                        <div class="flex flex-col sm:flex-row sm:items-baseline">
+                            <span class="text-slate-500 font-bold time-font w-16 shrink-0">12:45</span>
+                            <div>
+                                <h4 class="font-medium text-slate-700">工廠飯堂用餐</h4>
+                                <span class="text-xs bg-slate-100 text-slate-500 px-1.5 py-0.5 rounded">60 mins</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="absolute -left-8 top-1 bg-blue-100 border-2 border-blue-600 rounded-full w-4 h-4 z-10"></div>
+                        <div class="flex flex-col sm:flex-row sm:items-baseline">
+                            <span class="text-slate-500 font-bold time-font w-16 shrink-0">14:00</span>
+                            <!-- Removed Background -->
+                            <div class="w-full">
+                                <h4 class="font-bold text-blue-900"><i class="fas fa-lightbulb text-yellow-500 mr-2"></i>Innovation Workshop</h4>
+                                <p class="text-sm text-blue-800">溥儀 x 蔡司 創新工作坊</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="absolute -left-8 top-1 bg-slate-100 border-2 border-slate-400 rounded-full w-4 h-4 z-10"></div>
+                        <div class="flex flex-col sm:flex-row sm:items-baseline">
+                            <span class="text-slate-500 font-bold time-font w-16 shrink-0">16:00</span>
+                            <div>
+                                <h4 class="font-bold text-slate-800">項目啟動儀式 & 合影</h4>
+                                <p class="text-xs text-slate-500">產品本土化創新解決方案</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="absolute -left-8 top-1 bg-slate-800 border-2 border-slate-800 rounded-full w-4 h-4 z-10"></div>
+                        <div class="flex flex-col sm:flex-row sm:items-baseline">
+                            <span class="text-slate-900 font-bold time-font w-16 shrink-0">16:30</span>
+                            <!-- Added Yellow Background -->
+                            <div class="bg-yellow-50 p-3 rounded-lg border border-yellow-200 w-full">
+                                <h4 class="font-bold text-slate-800">行程結束，返程</h4>
+                                <p class="text-sm text-slate-700 mt-1 break-words"><i class="fas fa-clock mr-1"></i>預計 1h 15mins 車程前往廣州南站</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-slate-100 p-4 text-center text-xs text-slate-400 border-t border-slate-200 mt-auto">
+                <p>Day 2 / 2 &bull; PUYI x ZEISS G7 Factory Visit</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Download/Export Section for Web -->
+    <div class="action-bar" id="downloads">
+        <div class="action-title">Export Options</div>
+        <div class="btn-grid">
+            <button id="downloadDay1Btn" class="action-btn">
+                <i class="fas fa-image"></i> Day 1 Image
+            </button>
+            <button id="downloadDay2Btn" class="action-btn">
+                <i class="fas fa-image"></i> Day 2 Image
+            </button>
+            <button id="downloadPdfBtn" class="action-btn primary">
+                <i class="fas fa-file-pdf"></i> Download Full PDF
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // 設定通用截圖函數
+        function captureElement(elementId, fileName) {
+            const element = document.getElementById(elementId);
+            const btn = event.currentTarget;
+            const originalText = btn.innerHTML;
+            
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+            
+            return html2canvas(element, {
+                scale: 2,
+                useCORS: true,
+                allowTaint: true,
+                backgroundColor: "#ffffff",
+                width: 600,
+                windowWidth: 1200,
+                logging: false,
+                onclone: function(clonedDoc) {
+                    const clonedEl = clonedDoc.getElementById(elementId);
+                    clonedEl.style.height = 'auto';
+                    clonedEl.style.overflow = 'visible';
+                }
+            }).then(canvas => {
+                const link = document.createElement('a');
+                link.download = fileName;
+                link.href = canvas.toDataURL('image/png');
+                link.click();
+                
+                btn.innerHTML = '<i class="fas fa-check"></i> Done';
+                setTimeout(() => btn.innerHTML = originalText, 2000);
+            });
+        }
+
+        // Button Handlers
+        document.getElementById('downloadDay1Btn').addEventListener('click', function(e) {
+            captureElement('card-day1', 'PUYI_ZEISS_Day1.png');
+        });
+
+        document.getElementById('downloadDay2Btn').addEventListener('click', function(e) {
+            captureElement('card-day2', 'PUYI_ZEISS_Day2.png');
+        });
+
+        // PDF Generation for Both Cards
+        document.getElementById('downloadPdfBtn').addEventListener('click', async function() {
+            const btn = this;
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generating PDF...';
+
+            try {
+                const { jsPDF } = window.jspdf;
+                const pdf = new jsPDF('p', 'pt', 'a4'); // A4 standard
+                
+                // Capture Day 1
+                const canvas1 = await html2canvas(document.getElementById('card-day1'), {
+                    scale: 2, useCORS: true, allowTaint: true, backgroundColor: "#ffffff", width: 600, windowWidth: 1200
+                });
+                
+                // Calculate dimensions to fit A4 width
+                const a4Width = 595.28;
+                const a4Height = 841.89;
+                const imgWidth = a4Width - 40; // 20pt padding
+                const imgHeight1 = (canvas1.height * imgWidth) / canvas1.width;
+                
+                pdf.addImage(canvas1.toDataURL('image/png'), 'PNG', 20, 20, imgWidth, imgHeight1);
+                
+                // Add Page for Day 2
+                pdf.addPage();
+                
+                // Capture Day 2
+                const canvas2 = await html2canvas(document.getElementById('card-day2'), {
+                    scale: 2, useCORS: true, allowTaint: true, backgroundColor: "#ffffff", width: 600, windowWidth: 1200
+                });
+                
+                const imgHeight2 = (canvas2.height * imgWidth) / canvas2.width;
+                pdf.addImage(canvas2.toDataURL('image/png'), 'PNG', 20, 20, imgWidth, imgHeight2);
+
+                pdf.save('PUYI_ZEISS_Full_Itinerary.pdf');
+                
+                btn.innerHTML = '<i class="fas fa-check"></i> Done';
+                setTimeout(() => btn.innerHTML = originalText, 2000);
+                
+            } catch (err) {
+                console.error(err);
+                btn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Error';
+            }
+        });
+    </script>
+
+</body>
+</html>
